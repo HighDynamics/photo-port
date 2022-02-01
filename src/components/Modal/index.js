@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Modal = ({ currentPhoto }) => {
+const Modal = ({ currentPhoto, onClose }) => {
   const { name, category, description, index } = currentPhoto;
 
   return (
@@ -12,7 +12,9 @@ const Modal = ({ currentPhoto }) => {
           src={require(`../../assets/large/${category}/${index}.jpg`)}
         />
         <p>{description}</p>
-        <button type="button">Close this modal</button>
+        <button type="button" onClick={onClose}>
+          Close this modal
+        </button>
       </div>
     </div>
   );
